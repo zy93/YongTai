@@ -54,6 +54,7 @@
     if ([[UIDevice currentDevice] systemVersion].floatValue>=7.0) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
+    self.navigationItem.title = @"物业缴费";
     [self loadData];
 }
 

@@ -10,7 +10,6 @@
 #import "HomePageView.h"
 #import "WOTShortcutView.h"
 #import "PayMentViewController.h"
-
 #import "MaintenanceViewController.h"
 #import "ShopController.h"
 #import "H5CloudPrintController.h"
@@ -28,18 +27,21 @@
 #import "DoorLockDescribeViewController.h"
 #import "MBProgressHUDUtil.h"
 #import "DoorLockListViewController.h"
+#import "WOTShortcutMenuView.h"
+#import "WOTProductCell.h"
+#import "UIViewController+Extension.h"
+#import "YTMyVC.h"
 
-
-@interface HomePageController () <SDCycleScrollViewDelegate,WOTShortcutViewDelegate>
+@interface HomePageController () <SDCycleScrollViewDelegate, WOTShortcutMenuViewDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSArray *imageArr;
 }
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *topImageView;
-@property (weak, nonatomic) IBOutlet WOTShortcutView *shortcutScrollView;
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *autoScrollView;
-@property (weak, nonatomic) IBOutlet UIButton *parkingBtn;
+@property (weak, nonatomic) IBOutlet WOTShortcutMenuView *shortcutMenuView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @property (nonatomic, strong)DeviceFromGroupTool *deviceTool;
 @property (nonatomic, strong)NSMutableArray *deviceArray;
@@ -59,64 +61,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self doPrettyView];
+    self.navigationItem.title = @"永泰惠";
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+
     self.noticeInfoArray = [[NSArray alloc] init];
     self.imageUrlStrings = [[NSMutableArray alloc] init];
-    
     self.jumdgmentTime = [[JudgmentTime alloc] init];
     self.mainController = self;
-    self.shortcutScrollView.shortcutViewDelegate = self;
-    
-    //self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    self.shortcutMenuView.delegate = self;
     //[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
    // [self setNaVationBar];
    // [[UINavigationBar appearance] setBarTintColor:[UIColor clearColor]];
     // Do any additional setup after loading the view.
     //解决布局顶部空白问题
-    if ([[UIDevice currentDevice] systemVersion].floatValue>=7.0) {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
+//    if ([[UIDevice currentDevice] systemVersion].floatValue>=7.0) {
+//        self.automaticallyAdjustsScrollViewInsets = NO;
+//    }
     imageArr = @[[UIImage imageNamed:@"banner"],[UIImage imageNamed:@"banner1"]];
-   
     [self getData];
+    [self configNaviRightItemWithImage:[UIImage imageNamed:@"top_my"]];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width,CGRectGetMaxY(self.parkingBtn.frame)+5);
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width,700+5);
     [self sendRequest];
-    [self.navigationController setNavigationBarHidden:YES];
-    [self.tabBarController.tabBar setHidden:NO];//隐藏
     
 }
 
-
-
-
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
-    [self.tabBarController.tabBar setHidden:NO];
-    
-    CATransition *transition = [CATransition animation];
-    [transition setDuration:0.5];
-    [transition setType:@"fade"];
-    [self.tabBarController.view.layer addAnimation:transition forKey:nil];
 }
 
 
 -(void)dealloc{
     NSLog(@"HomePageController dealloc");
 }
--(void)doPrettyView{
-    //self.navigationItem.title = @"首页";
-    
-}
+
 - (UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
--(BOOL)prefersStatusBarHidden{
-    return NO;
+    return UIStatusBarStyleDefault;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,9 +108,18 @@
 }
 
 #pragma mark - action
--(void)selfPushVCWithUrl:(NSString *)url
+-(void)rightItemAction
+{
+    YTMyVC *vc = [[YTMyVC alloc] init];
+    [self.navigationController pushViewController:vc  animated:YES];
+}
+
+-(void)selfPushVCWithUrl:(NSString *)url withTitle:(NSString *)title
 {
     PayMentViewController *h5 = [[PayMentViewController alloc] init];
+    if (title) {
+        h5.navigationItem.title = title;
+    }
     h5.url = [NSURL URLWithString:url];
     [self.navigationController pushViewController:h5 animated:YES];
 }
@@ -175,6 +167,51 @@
     }
 }
 
+#pragma mark - table delegate & data source
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ssss"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"ssss"];
+    }
+    return cell;
+}
+
+
+#pragma mark - shortcut menu delegate
+-(void)shortcutMenu:(WOTShortcutMenuView *)menu pushToVCWithStoryboardName:(NSString *)sbName vcName:(NSString *)vcName
+{
+    if (strIsEmpty(vcName)) {
+        [ToastUtil showToast:@"敬请期待！"];
+        return;
+    }
+    UIViewController *vc = nil;
+    if (strIsEmpty(sbName)) {
+        vc = [[NSClassFromString(vcName) alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+    }
+    else {
+        vc = [[UIStoryboard storyboardWithName:sbName bundle:nil] instantiateViewControllerWithIdentifier:vcName];
+    }
+    if ([vc isKindOfClass:[PayMentViewController class]]) {
+        NSString *urlString = @"https://api.uyess.com/gzh/index.php?uyes_qd_no=uyes_hz_ylg";
+        [self selfPushVCWithUrl:urlString withTitle:@"轻松到家"];
+        return;
+    }
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 #pragma mark - 北菜园
 
 - (IBAction)gardenButton:(id)sender {
@@ -185,7 +222,7 @@
 
 - (IBAction)farmButton:(id)sender {
      NSString *urlString = @"https://wx.tonysfarm.com/public/index/index_shop_app.html?customerId=7e144bf108b94505a890ec3a7820db8d&applicationId=899A6191575A4E46AF62BA3D7096387E&rid=99749";
-    [self selfPushVCWithUrl:urlString];
+    [self selfPushVCWithUrl:urlString withTitle:@"多利农庄"];
    
 }
 
@@ -230,7 +267,7 @@
 
     NSString *urlString = @"http://www.yiliangang.net:8012/page/ManDun/box.html";
     //NSString *urlString = @"http://www.apple.com";
-    [self selfPushVCWithUrl:urlString];
+    [self selfPushVCWithUrl:urlString withTitle:@"智水小荷"];
     //[ToastUtil showToast:@"敬请期待！"];
 }
 
@@ -258,7 +295,7 @@
 #pragma mark - 轻松到家
 - (IBAction)getHomeButton:(id)sender {
     NSString *urlString = @"https://api.uyess.com/gzh/index.php?uyes_qd_no=uyes_hz_ylg";
-    [self selfPushVCWithUrl:urlString];
+    [self selfPushVCWithUrl:urlString withTitle:@"轻松到家"];
 }
 
 #pragma mark - 按摩椅
@@ -351,7 +388,7 @@
 -(void)gardenMethod
 {
     NSString *urlString = @"https://shop13299823.wxrrd.com/feature/10257418";
-    [self selfPushVCWithUrl:urlString];
+    [self selfPushVCWithUrl:urlString withTitle:@"北菜园"];
 }
 
 

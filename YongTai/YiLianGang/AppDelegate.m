@@ -16,6 +16,8 @@
 #import "StyleTool.h"
 #import "WeatherTool.h"
 #import "LoginNewViewController.h"
+#import "HomePageController.h"
+#import "WOTBaseNavigationController.h"
 #import "JPUSHService.h"
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -34,9 +36,8 @@
     [self comfirmIfHasLoginSaved];
     //清楚通知小红点
     
-    [[UINavigationBar appearance]setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:18]}];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
+    [[UINavigationBar appearance]setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:18]}];
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     [[UINavigationBar appearance] setBarTintColor:[[StyleTool sharedStyleTool]sessionSyle].naviColor];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     
@@ -207,15 +208,17 @@
 }
 /**设置tabBar*/
 -(void)goToTabBar{
-    UIViewController *vc = [[TabBarSetTool sharedTabBarSetTool]getTabBarController];
+//    UIViewController *vc = [[TabBarSetTool sharedTabBarSetTool]getTabBarController];
+    
+    WOTBaseNavigationController *nav = [[WOTBaseNavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"HomePageController" bundle:nil] instantiateViewControllerWithIdentifier:@"HomePageController"]];
     
     [UIView transitionFromView:self.window.rootViewController.view
-                        toView:vc.view
+                        toView:nav.view
                       duration:0.5
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     completion:^(BOOL finished)
      {
-         self.window.rootViewController = vc;
+         self.window.rootViewController = nav;
          self.welcomeController = nil;
      }];
     
