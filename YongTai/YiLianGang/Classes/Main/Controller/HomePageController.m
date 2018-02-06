@@ -29,8 +29,10 @@
 #import "DoorLockListViewController.h"
 #import "WOTShortcutMenuView.h"
 #import "WOTProductCell.h"
+#import "WOTFirstCell.h"
 #import "UIViewController+Extension.h"
 #import "YTMyVC.h"
+#import "Masonry.h"
 
 @interface HomePageController () <SDCycleScrollViewDelegate, WOTShortcutMenuViewDelegate, UITableViewDelegate, UITableViewDataSource>
 {
@@ -78,13 +80,16 @@
 //        self.automaticallyAdjustsScrollViewInsets = NO;
 //    }
     imageArr = @[[UIImage imageNamed:@"banner"],[UIImage imageNamed:@"banner1"]];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WOTFirstCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WOTFirstCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WOTProductCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"WOTProductCell"];
+
     [self getData];
     [self configNaviRightItemWithImage:[UIImage imageNamed:@"top_my"]];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width,700+5);
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width,750);
     [self sendRequest];
     
 }
@@ -178,13 +183,42 @@
     return 3;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row==0) {
+        return 40;
+    }
+    return 90;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return nil;
+}
+
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ssss"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"ssss"];
+    
+    if (indexPath.row==0) {
+        WOTFirstCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WOTFirstCell"];
+        return cell;
     }
-    return cell;
+    else {
+        WOTProductCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WOTProductCell"];
+        return cell;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [ToastUtil showToast:@"敬请期待！"];
 }
 
 

@@ -47,6 +47,8 @@
 		2A40FF1F20294C6B002B82BB /* YTOtherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A40FF1D20294C6B002B82BB /* YTOtherCell.m */; };
 		2A40FF2020294C6B002B82BB /* YTOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A40FF1E20294C6B002B82BB /* YTOtherCell.xib */; };
 		2A40FF23202952AC002B82BB /* WOTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A40FF21202952AB002B82BB /* WOTButton.m */; };
+		2A40FF272029AFB1002B82BB /* WOTFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A40FF252029AFB1002B82BB /* WOTFirstCell.m */; };
+		2A40FF282029AFB1002B82BB /* WOTFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A40FF262029AFB1002B82BB /* WOTFirstCell.xib */; };
 		2A628A641E8E2F4400A49D12 /* PropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A628A631E8E2F4400A49D12 /* PropertyViewController.m */; };
 		2A628A6A1E8E516700A49D12 /* MaintenanceHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A628A691E8E516700A49D12 /* MaintenanceHistoryViewController.m */; };
 		2A628A6D1E8E517C00A49D12 /* MaintenanceHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A628A6C1E8E517C00A49D12 /* MaintenanceHistoryView.m */; };
@@ -631,6 +633,9 @@
 		2A40FF1E20294C6B002B82BB /* YTOtherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTOtherCell.xib; sourceTree = "<group>"; };
 		2A40FF21202952AB002B82BB /* WOTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOTButton.m; sourceTree = "<group>"; };
 		2A40FF22202952AB002B82BB /* WOTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOTButton.h; sourceTree = "<group>"; };
+		2A40FF242029AFB1002B82BB /* WOTFirstCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WOTFirstCell.h; sourceTree = "<group>"; };
+		2A40FF252029AFB1002B82BB /* WOTFirstCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WOTFirstCell.m; sourceTree = "<group>"; };
+		2A40FF262029AFB1002B82BB /* WOTFirstCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WOTFirstCell.xib; sourceTree = "<group>"; };
 		2A628A621E8E2F4400A49D12 /* PropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyViewController.h; sourceTree = "<group>"; };
 		2A628A631E8E2F4400A49D12 /* PropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyViewController.m; sourceTree = "<group>"; };
 		2A628A681E8E516700A49D12 /* MaintenanceHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaintenanceHistoryViewController.h; sourceTree = "<group>"; };
@@ -2607,6 +2612,9 @@
 				2A40FF21202952AB002B82BB /* WOTButton.m */,
 				2A9C896420280C3E00621EBB /* WOTShortcutMenuView.h */,
 				2A9C896520280C3E00621EBB /* WOTShortcutMenuView.m */,
+				2A40FF242029AFB1002B82BB /* WOTFirstCell.h */,
+				2A40FF252029AFB1002B82BB /* WOTFirstCell.m */,
+				2A40FF262029AFB1002B82BB /* WOTFirstCell.xib */,
 				2A9C89672028533600621EBB /* WOTProductCell.h */,
 				2A9C89682028533600621EBB /* WOTProductCell.m */,
 				2A9C89692028533600621EBB /* WOTProductCell.xib */,
@@ -3005,6 +3013,7 @@
 				2D2FD6BD1D4AF902003F69AB /* LaunchScreen.storyboard in Resources */,
 				2D42E5D11D6F0314005361D7 /* DeviceCollectionViewCell.xib in Resources */,
 				2D636C581DB480BC0081EF37 /* DeviceGroupSelectHeaderView.xib in Resources */,
+				2A40FF282029AFB1002B82BB /* WOTFirstCell.xib in Resources */,
 				2DB34D551DA8994600722FBF /* deviceControlButton1@3x.png in Resources */,
 				2A0B5B7E1E7A78F000C95918 /* service_bg@2x.png in Resources */,
 				2DB34D701DA8A67200722FBF /* zhire@3x.png in Resources */,
@@ -3450,6 +3459,7 @@
 				2D906E8D1D50AE1E000AF85C /* WN_YL_RequestTool.m in Sources */,
 				2A657CBF1E7F807800788CFA /* UIViewExt.m in Sources */,
 				2D945FFE1DA9DEC6007C258B /* NSRunLoop+SRWebSocket.m in Sources */,
+				2A40FF272029AFB1002B82BB /* WOTFirstCell.m in Sources */,
 				2D6CB2231DACCE8C009FBE29 /* DASHomeFurnishController.m in Sources */,
 				2D5618FA1D8E6E17002D1D82 /* UIFont+MyFont.m in Sources */,
 				2D47D3AB1E65824A00048798 /* NSString+URL.m in Sources */,

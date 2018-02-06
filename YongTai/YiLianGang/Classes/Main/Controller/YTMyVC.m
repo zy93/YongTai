@@ -12,12 +12,14 @@
 #import "YTOtherCell.h"
 #import "Masonry.h"
 #import "UIViewController+Extension.h"
+#import "UIColor+RCColor.h"
 
-@interface YTMyVC () <UITableViewDelegate, UITableViewDataSource>
+@interface YTMyVC () <YTOrderCellDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView * table;
 @property (nonatomic, strong) NSArray * tableList;
 @property (nonatomic, strong) NSArray * imageList;
+@property (nonatomic, strong) UIButton * logoutBtn;
 
 @end
 
@@ -51,6 +53,7 @@
 }
 
 -(void)loadViews {
+    self.view.backgroundColor = [UIColor colorWithHexString:@"0xeeeeee" alpha:1.f];
     self.table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     self.table.delegate = self;
     self.table.dataSource = self;
@@ -61,11 +64,24 @@
     [self.table registerNib:[UINib nibWithNibName:@"YTOrderCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"YTOrderCell"];
     [self.table registerNib:[UINib nibWithNibName:@"YTOtherCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"YTOtherCell"];
     
+    self.logoutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.logoutBtn addTarget:self action:@selector(logoutBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.logoutBtn.layer setCornerRadius:5.f];
+    [self.logoutBtn setBackgroundColor:[UIColor colorWithHexString:@"0x4190e0" alpha:1.f]];
+    [self.logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+    [self.view addSubview:self.logoutBtn];
+    
+    [self.logoutBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_offset(45);
+        make.left.mas_offset(20);
+        make.bottom.mas_offset(-15);
+        make.right.mas_offset(-20);
+    }];
     
     [self.table mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_offset(0);
         make.left.mas_offset(0);
-        make.bottom.mas_offset(0);
+        make.bottom.equalTo(self.logoutBtn.mas_top).with.offset(-10);
         make.right.mas_offset(0);
     }];
 }
@@ -79,7 +95,16 @@
 
 
 #pragma mark - action
+-(void)logoutBtnClick:(UIButton *)sender
+{
+    
+}
 
+#pragma mark - cell delegate
+-(void)orderCell:(YTOrderCell *)cell selectBtn:(NSString *)btnTitle
+{
+    [ToastUtil showToast:@"敬请期待！"];
+}
 
 #pragma mark - table delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -131,6 +156,7 @@
     }
     else if (indexPath.section==1) {
         YTOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YTOrderCell"];
+        cell.delegate = self;
         return cell;
     }
     else {
@@ -140,6 +166,20 @@
         [cell.titleLab setText:arr[indexPath.row]];
         return cell;
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    if (indexPath.row==5) {
+//
+//    }
+//    else
+//        if (indexPath.row == 6) {
+//
+//    }
+//    else
+        [ToastUtil showToast:@"敬请期待！"];
 }
 
 /*

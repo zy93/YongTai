@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "WOTButton.h"
 
+@class YTOrderCell;
+
+@protocol YTOrderCellDelegate <NSObject>
+-(void)orderCell:(YTOrderCell *)cell selectBtn:(NSString *)btnTitle;
+@end
+
 @interface YTOrderCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet WOTButton *notPayBtn;
 @property (weak, nonatomic) IBOutlet WOTButton *notSendBtn;
@@ -17,5 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *line1View;
 @property (weak, nonatomic) IBOutlet UIView *line2View;
 @property (weak, nonatomic) IBOutlet UIView *line3View;
+
+@property (nonatomic, strong) id <YTOrderCellDelegate>  delegate;
 
 @end
