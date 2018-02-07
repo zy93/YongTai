@@ -211,16 +211,8 @@
 //    UIViewController *vc = [[TabBarSetTool sharedTabBarSetTool]getTabBarController];
     
     WOTBaseNavigationController *nav = [[WOTBaseNavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"HomePageController" bundle:nil] instantiateViewControllerWithIdentifier:@"HomePageController"]];
-    
-    [UIView transitionFromView:self.window.rootViewController.view
-                        toView:nav.view
-                      duration:0.5
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    completion:^(BOOL finished)
-     {
-         self.window.rootViewController = nav;
-         self.welcomeController = nil;
-     }];
+    self.window.rootViewController = nav;
+    self.welcomeController = nil;
     
 }
 

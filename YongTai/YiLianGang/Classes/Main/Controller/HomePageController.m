@@ -312,14 +312,7 @@
 
 #pragma mark - 物业缴费
 - (IBAction)propertyButton:(id)sender {
-    [self judgmentTime];
-    if (!_isPayView) {
-        [self propertyMethod];
-    }else
-    {
-        [ToastUtil showToast:@"敬请期待！"];
-    }
-    
+    [self propertyMethod];
 }
 #pragma mark - 云打印
 - (IBAction)cloudPrint:(id)sender {
@@ -440,7 +433,7 @@
     [formatter setDateFormat:@"YYYY-MM-dd"];
     NSString *DateTime = [formatter stringFromDate:date];
    // NSString *aDataTime =@"2017/11/02";
-    _isPayView = [self.jumdgmentTime compareDate:DateTime withDate:@"2017/11/3"];
+    _isPayView = [self.jumdgmentTime compareDate:DateTime withDate:@"2018/2/15"];
     
 }
 

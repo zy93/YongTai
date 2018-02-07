@@ -14,6 +14,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 +(BOOL)isNeedHidden;
-
+-(void)goToTabBar;
 @end
 

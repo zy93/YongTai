@@ -13,6 +13,8 @@
 #import "LoginNewTool.h"
 #import "JPUSHService.h"
 #import "TabBarSetTool.h"
+#import "HomePageController.h"
+#import "AppDelegate.h"
 
 @interface LoginNewViewController ()
 
@@ -89,13 +91,13 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    [self.tabBarController.tabBar setHidden:YES];
+//    [self.tabBarController.tabBar setHidden:YES];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    [self.tabBarController.tabBar setHidden:NO];
+//    [self.tabBarController.tabBar setHidden:NO];
 }
 
 -(void)viewDidLayoutSubviews
@@ -265,16 +267,8 @@
     NSNotification *notification = [NSNotification notificationWithName:kJPFNetworkDidLoginNotification object:nil userInfo:nil];
     
     [[NSNotificationCenter defaultCenter] postNotification:notification];
-    UIViewController *vc = [[TabBarSetTool sharedTabBarSetTool]getTabBarController];
     
-    [UIView transitionFromView:[UIApplication sharedApplication].keyWindow.rootViewController.view
-                        toView:vc.view
-                      duration:0.5
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    completion:^(BOOL finished)
-     {
-         [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-     }];
+    [((AppDelegate *)[UIApplication sharedApplication].delegate) goToTabBar];
 }
 
 #pragma mark - 获取验证码倒计时

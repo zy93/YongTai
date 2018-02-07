@@ -18,13 +18,14 @@
 
 -(instancetype)initWithRootViewController:(UIViewController *)rootViewController{
     if (self = [super initWithRootViewController:rootViewController]) {
-        self.navigationBar.barTintColor = [UIColor blackColor];
+        self.navigationBar.barTintColor = [UIColor whiteColor];
         [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
         self.navigationItem.titleView = nil;
-        self.navigationBar.tintColor = [UIColor blackColor];
+        self.navigationBar.tintColor = [UIColor whiteColor];
         self.navigationBar.shadowImage = [[UIImage alloc]init];
-        self.tabBarController.tabBar.tintColor = [UIColor blackColor];
+        self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
         self.navigationBar.barStyle = UIBarStyleBlack;
+        self.navigationController.navigationBar.translucent = NO; //有个万恶的黑色
         UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 44, SCREEN_WIDTH, 0.5)];
         line.backgroundColor = [UIColor blackColor];
         [self.navigationBar addSubview:line];

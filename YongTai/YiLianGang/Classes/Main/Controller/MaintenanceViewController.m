@@ -48,7 +48,7 @@
     [back setFrame:CGRectMake(CGRectGetWidth(self.view.frame)-50,  0, 40, 45)];
     [back addTarget:self action:@selector(history:) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationController.navigationBar addSubview:back];
-    [self.tabBarController.tabBar setHidden:YES];
+//    [self.tabBarController.tabBar setHidden:YES];
 }
 
 -(void)viewDidDisappear:(BOOL)animated

@@ -13,6 +13,7 @@
 #import "Masonry.h"
 #import "UIViewController+Extension.h"
 #import "UIColor+RCColor.h"
+#import "LoginNewViewController.h"
 
 @interface YTMyVC () <YTOrderCellDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -97,6 +98,48 @@
 #pragma mark - action
 -(void)logoutBtnClick:(UIButton *)sender
 {
+    UIAlertController*alert = [UIAlertController
+                               alertControllerWithTitle: @"确定退出吗？"
+                               message: @""
+                               preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消"
+                                              style:UIAlertActionStyleCancel
+                                            handler:^(UIAlertAction * _Nonnull action) {
+                                                
+                                            }]];
+    [alert addAction:[UIAlertAction
+                      actionWithTitle:@"确定"
+                      style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                      {
+                          [self goToLoginView];
+                      }]];
+    
+    //弹出提示框
+    [self presentViewController:alert
+                       animated:YES completion:nil];
+}
+
+
+-(void)goToLoginView{
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"mobile"];
+    
+    LoginNewViewController *loginNewVC = [[LoginNewViewController alloc] init];
+    
+    [UIView transitionFromView:self.tabBarController.view
+                        toView:loginNewVC.view
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    completion:^(BOOL finished)
+     {
+         //         [[TabBarSetTool sharedTabBarSetTool]resetTabBar];
+         [self dismissViewControllerAnimated:NO completion:nil];
+         [UIApplication sharedApplication].keyWindow.rootViewController = loginNewVC;
+         
+     }];
+    //    //先清除之前缓存
+    //
+    //    LoginNewViewController *loginNewVC = [[LoginNewViewController alloc] init];
+    //    [self.navigationController pushViewController:loginNewVC animated:YES];
     
 }
 
