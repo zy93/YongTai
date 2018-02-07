@@ -49,6 +49,9 @@
 		2A40FF23202952AC002B82BB /* WOTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A40FF21202952AB002B82BB /* WOTButton.m */; };
 		2A40FF272029AFB1002B82BB /* WOTFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A40FF252029AFB1002B82BB /* WOTFirstCell.m */; };
 		2A40FF282029AFB1002B82BB /* WOTFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A40FF262029AFB1002B82BB /* WOTFirstCell.xib */; };
+		2A40FF2C2029C11E002B82BB /* YTAnnouncementListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A40FF2B2029C11E002B82BB /* YTAnnouncementListVC.m */; };
+		2A40FF302029C18A002B82BB /* YTAnnouncementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A40FF2E2029C18A002B82BB /* YTAnnouncementCell.m */; };
+		2A40FF312029C18A002B82BB /* YTAnnouncementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A40FF2F2029C18A002B82BB /* YTAnnouncementCell.xib */; };
 		2A628A641E8E2F4400A49D12 /* PropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A628A631E8E2F4400A49D12 /* PropertyViewController.m */; };
 		2A628A6A1E8E516700A49D12 /* MaintenanceHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A628A691E8E516700A49D12 /* MaintenanceHistoryViewController.m */; };
 		2A628A6D1E8E517C00A49D12 /* MaintenanceHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A628A6C1E8E517C00A49D12 /* MaintenanceHistoryView.m */; };
@@ -95,6 +98,7 @@
 		2A915F6D1E7B91AD00060DE7 /* YYUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A915F6C1E7B91AD00060DE7 /* YYUtil.m */; };
 		2A915F731E7BDB3400060DE7 /* MaintenanceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A915F721E7BDB3400060DE7 /* MaintenanceListViewController.m */; };
 		2A915F761E7BDB4600060DE7 /* MaintenanceListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A915F751E7BDB4600060DE7 /* MaintenanceListView.m */; };
+		2A938187202A9D620093F1AB /* AnnouncementTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A938186202A9D620093F1AB /* AnnouncementTool.m */; };
 		2A9C896620280C3E00621EBB /* WOTShortcutMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9C896520280C3E00621EBB /* WOTShortcutMenuView.m */; };
 		2A9C896A2028533600621EBB /* WOTProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9C89682028533600621EBB /* WOTProductCell.m */; };
 		2A9C896B2028533600621EBB /* WOTProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9C89692028533600621EBB /* WOTProductCell.xib */; };
@@ -636,6 +640,11 @@
 		2A40FF242029AFB1002B82BB /* WOTFirstCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WOTFirstCell.h; sourceTree = "<group>"; };
 		2A40FF252029AFB1002B82BB /* WOTFirstCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WOTFirstCell.m; sourceTree = "<group>"; };
 		2A40FF262029AFB1002B82BB /* WOTFirstCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WOTFirstCell.xib; sourceTree = "<group>"; };
+		2A40FF2A2029C11E002B82BB /* YTAnnouncementListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTAnnouncementListVC.h; sourceTree = "<group>"; };
+		2A40FF2B2029C11E002B82BB /* YTAnnouncementListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTAnnouncementListVC.m; sourceTree = "<group>"; };
+		2A40FF2D2029C18A002B82BB /* YTAnnouncementCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTAnnouncementCell.h; sourceTree = "<group>"; };
+		2A40FF2E2029C18A002B82BB /* YTAnnouncementCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTAnnouncementCell.m; sourceTree = "<group>"; };
+		2A40FF2F2029C18A002B82BB /* YTAnnouncementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTAnnouncementCell.xib; sourceTree = "<group>"; };
 		2A628A621E8E2F4400A49D12 /* PropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyViewController.h; sourceTree = "<group>"; };
 		2A628A631E8E2F4400A49D12 /* PropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyViewController.m; sourceTree = "<group>"; };
 		2A628A681E8E516700A49D12 /* MaintenanceHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaintenanceHistoryViewController.h; sourceTree = "<group>"; };
@@ -697,6 +706,8 @@
 		2A915F721E7BDB3400060DE7 /* MaintenanceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaintenanceListViewController.m; sourceTree = "<group>"; };
 		2A915F741E7BDB4600060DE7 /* MaintenanceListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaintenanceListView.h; sourceTree = "<group>"; };
 		2A915F751E7BDB4600060DE7 /* MaintenanceListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaintenanceListView.m; sourceTree = "<group>"; };
+		2A938185202A9D620093F1AB /* AnnouncementTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnnouncementTool.h; sourceTree = "<group>"; };
+		2A938186202A9D620093F1AB /* AnnouncementTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnouncementTool.m; sourceTree = "<group>"; };
 		2A9C896420280C3E00621EBB /* WOTShortcutMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOTShortcutMenuView.h; sourceTree = "<group>"; };
 		2A9C896520280C3E00621EBB /* WOTShortcutMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOTShortcutMenuView.m; sourceTree = "<group>"; };
 		2A9C89672028533600621EBB /* WOTProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WOTProductCell.h; sourceTree = "<group>"; };
@@ -1535,6 +1546,15 @@
 				2A1CEA181E812E95008D33DC /* MLSelectPhotoPickerGroupTableViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2A40FF292029C0E4002B82BB /* announcement */ = {
+			isa = PBXGroup;
+			children = (
+				2A40FF2A2029C11E002B82BB /* YTAnnouncementListVC.h */,
+				2A40FF2B2029C11E002B82BB /* YTAnnouncementListVC.m */,
+			);
+			path = announcement;
 			sourceTree = "<group>";
 		};
 		2A628A6E1E8E519C00A49D12 /* owner */ = {
@@ -2379,6 +2399,7 @@
 		2DAE70CB1D5B2EFD00C32E71 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2A40FF292029C0E4002B82BB /* announcement */,
 				2D2933641D5C13F500947C9A /* HomePageController.h */,
 				2D2933651D5C13F500947C9A /* HomePageController.m */,
 				C74CD2411F8F7A58006AE5F2 /* HomePageController.storyboard */,
@@ -2601,6 +2622,8 @@
 				C7E0ABD11FBD916300F9F691 /* GetDeviceInfoRequestTool.m */,
 				C7EF58CB1FBFD34800D46479 /* PropertyBillListRequestTool.h */,
 				C7EF58CC1FBFD34800D46479 /* PropertyBillListRequestTool.m */,
+				2A938185202A9D620093F1AB /* AnnouncementTool.h */,
+				2A938186202A9D620093F1AB /* AnnouncementTool.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -2627,6 +2650,9 @@
 				2A40FF1C20294C6B002B82BB /* YTOtherCell.h */,
 				2A40FF1D20294C6B002B82BB /* YTOtherCell.m */,
 				2A40FF1E20294C6B002B82BB /* YTOtherCell.xib */,
+				2A40FF2D2029C18A002B82BB /* YTAnnouncementCell.h */,
+				2A40FF2E2029C18A002B82BB /* YTAnnouncementCell.m */,
+				2A40FF2F2029C18A002B82BB /* YTAnnouncementCell.xib */,
 				2D2831EB1D62E792006CCED7 /* HomePageView.h */,
 				2D2831EC1D62E792006CCED7 /* HomePageView.m */,
 				2AB278411F8F9CA400F4403E /* WOTShortcutView.h */,
@@ -3100,6 +3126,7 @@
 				2A1CEA2D1E812E95008D33DC /* MLSelectPhoto.bundle in Resources */,
 				2D42E5C61D6EFDEE005361D7 /* device空调.png in Resources */,
 				2D7B290D1E5E7B8D00271734 /* colorbar@2x.png in Resources */,
+				2A40FF312029C18A002B82BB /* YTAnnouncementCell.xib in Resources */,
 				2D906E7B1D50991B000AF85C /* MJRefresh.bundle in Resources */,
 				2DBB90C51D61C655008BAED7 /* icon_ylg@2x.png in Resources */,
 				2D19063E1D6710450034A153 /* 公共服务@3x.png in Resources */,
@@ -3389,6 +3416,7 @@
 				C7A289341FBC30C80017AE19 /* DoorLockListViewController.m in Sources */,
 				2D906E7C1D50991B000AF85C /* MJRefreshConst.m in Sources */,
 				2D906E801D50991B000AF85C /* UIView+MJExtension.m in Sources */,
+				2A40FF2C2029C11E002B82BB /* YTAnnouncementListVC.m in Sources */,
 				2D3B90671D82A06C00E2D40D /* WeatherInfo.m in Sources */,
 				C7F908531F99A0260044F56E /* ServiceReturnInformation.m in Sources */,
 				C7FE33021FBAF99E00F5DFC1 /* DepositListViewController.m in Sources */,
@@ -3554,6 +3582,7 @@
 				2D3B906A1D82AA0200E2D40D /* WeatherTool.m in Sources */,
 				2D2933661D5C13F500947C9A /* HomePageController.m in Sources */,
 				2DD716881D751DC1005AFB44 /* DeviceGroupController.m in Sources */,
+				2A40FF302029C18A002B82BB /* YTAnnouncementCell.m in Sources */,
 				2DBB90BB1D619587008BAED7 /* UIImage+GIF.m in Sources */,
 				2A1CEA1B1E812E95008D33DC /* UIView+MLExtension.m in Sources */,
 				2A1CEA251E812E95008D33DC /* MLPhotoPickerImageView.m in Sources */,
@@ -3571,6 +3600,7 @@
 				2D3DE5A01D6D976C00EB6CC5 /* ServiceController.m in Sources */,
 				2D9460021DA9DEC6007C258B /* SRWebSocket.m in Sources */,
 				C73D063E1FC3C3BC00D0E1F3 /* PayContentCell.m in Sources */,
+				2A938187202A9D620093F1AB /* AnnouncementTool.m in Sources */,
 				2A915F6D1E7B91AD00060DE7 /* YYUtil.m in Sources */,
 				2D7B29061E5E783600271734 /* DeviceLightController.m in Sources */,
 				2D9F7C601D51D75300C91706 /* RegisterLastCell.m in Sources */,
