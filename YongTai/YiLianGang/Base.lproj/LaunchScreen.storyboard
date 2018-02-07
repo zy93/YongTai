@@ -27,10 +27,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0LS-16-2jL" firstAttribute="top" secondItem="aNa-B1-uoe" secondAttribute="bottom" id="GNc-Bb-Wpw"/>
+                            <constraint firstItem="0LS-16-2jL" firstAttribute="top" secondItem="aNa-B1-uoe" secondAttribute="bottom" id="KPy-dd-HOQ"/>
                             <constraint firstAttribute="trailing" secondItem="0LS-16-2jL" secondAttribute="trailing" id="OW0-bM-Ezr"/>
+                            <constraint firstItem="vgn-4J-mIc" firstAttribute="top" secondItem="0LS-16-2jL" secondAttribute="bottom" id="Wyk-bg-hFZ"/>
                             <constraint firstItem="0LS-16-2jL" firstAttribute="leading" secondItem="qld-je-7DE" secondAttribute="leading" id="cyc-aV-fOe"/>
-                            <constraint firstItem="vgn-4J-mIc" firstAttribute="top" secondItem="0LS-16-2jL" secondAttribute="bottom" id="fyb-ES-sH1"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

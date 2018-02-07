@@ -115,7 +115,7 @@
 		2A9E4BFE1E792DD100387662 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9E4BFD1E792DD100387662 /* libresolv.tbd */; };
 		2AB278401F8F811600F4403E /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB2783F1F8F811600F4403E /* MyViewController.m */; };
 		2AB278431F8F9CA400F4403E /* WOTShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB278421F8F9CA400F4403E /* WOTShortcutView.m */; };
-		2AFC0BCD202B10BE0007FA81 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AFC0BCC202B10BE0007FA81 /* launch.png */; };
+		2AFC0BCF202B13930007FA81 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AFC0BCE202B13930007FA81 /* launch.png */; };
 		2D15CE631D51EF3200075119 /* RegisterTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D15CE621D51EF3200075119 /* RegisterTableController.m */; };
 		2D19063D1D6710450034A153 /* 公共服务@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1906351D6710450034A153 /* 公共服务@2x.png */; };
 		2D19063E1D6710450034A153 /* 公共服务@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1906361D6710450034A153 /* 公共服务@3x.png */; };
@@ -524,7 +524,6 @@
 		C7BA19AF1F909C1E0008AF4A /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BA19AE1F909C1E0008AF4A /* AboutViewController.m */; };
 		C7BA19B11F909CE40008AF4A /* companyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = C7BA19B01F909CE40008AF4A /* companyLogo.png */; };
 		C7BA19B41F90B8C80008AF4A /* PayBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BA19B31F90B8C80008AF4A /* PayBillViewController.m */; };
-		C7DA520C1FC90DF300DF402D /* startPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DA520B1FC90DF300DF402D /* startPicture.png */; };
 		C7DC7DA11FA32F880055813A /* MBProgressHUD+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DC7D9F1FA32F870055813A /* MBProgressHUD+Extension.m */; };
 		C7DC7DA41FA337700055813A /* MBProgressHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DC7DA31FA3376F0055813A /* MBProgressHUDUtil.m */; };
 		C7E0ABD21FBD916300F9F691 /* GetDeviceInfoRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E0ABD11FBD916300F9F691 /* GetDeviceInfoRequestTool.m */; };
@@ -730,7 +729,7 @@
 		2AB2783F1F8F811600F4403E /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		2AB278411F8F9CA400F4403E /* WOTShortcutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WOTShortcutView.h; sourceTree = "<group>"; };
 		2AB278421F8F9CA400F4403E /* WOTShortcutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WOTShortcutView.m; sourceTree = "<group>"; };
-		2AFC0BCC202B10BE0007FA81 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = ../../../../Desktop/launch.png; sourceTree = "<group>"; };
+		2AFC0BCE202B13930007FA81 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = ../../../../Desktop/launch.png; sourceTree = "<group>"; };
 		2D15CE611D51EF3200075119 /* RegisterTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTableController.h; sourceTree = "<group>"; };
 		2D15CE621D51EF3200075119 /* RegisterTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTableController.m; sourceTree = "<group>"; };
 		2D1906351D6710450034A153 /* 公共服务@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "公共服务@2x.png"; sourceTree = "<group>"; };
@@ -1354,7 +1353,6 @@
 		C7BA19B01F909CE40008AF4A /* companyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = companyLogo.png; sourceTree = "<group>"; };
 		C7BA19B21F90B8C80008AF4A /* PayBillViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayBillViewController.h; sourceTree = "<group>"; };
 		C7BA19B31F90B8C80008AF4A /* PayBillViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayBillViewController.m; sourceTree = "<group>"; };
-		C7DA520B1FC90DF300DF402D /* startPicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startPicture.png; sourceTree = "<group>"; };
 		C7DC7D9F1FA32F870055813A /* MBProgressHUD+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Extension.m"; sourceTree = "<group>"; };
 		C7DC7DA01FA32F880055813A /* MBProgressHUD+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Extension.h"; sourceTree = "<group>"; };
 		C7DC7DA21FA3376F0055813A /* MBProgressHUDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUDUtil.h; sourceTree = "<group>"; };
@@ -1657,8 +1655,7 @@
 				2D2FD6B11D4AF902003F69AB /* AppDelegate.m */,
 				2D2FD6B61D4AF902003F69AB /* Main.storyboard */,
 				2D2FD6B91D4AF902003F69AB /* Assets.xcassets */,
-				2AFC0BCC202B10BE0007FA81 /* launch.png */,
-				C7DA520B1FC90DF300DF402D /* startPicture.png */,
+				2AFC0BCE202B13930007FA81 /* launch.png */,
 				2D2FD6BB1D4AF902003F69AB /* LaunchScreen.storyboard */,
 				2DF9995B1E5C440C0021264C /* MYLog.h */,
 				2DF9995C1E5C440C0021264C /* PrefixHeader.pch */,
@@ -3182,7 +3179,7 @@
 				2D7B29081E5E784000271734 /* DeviceLightController.storyboard in Resources */,
 				2D2831E91D62DD13006CCED7 /* reg_gou.png in Resources */,
 				2D7F5FB11E5D6A2A00581A8F /* icon_back@3x.png in Resources */,
-				2AFC0BCD202B10BE0007FA81 /* launch.png in Resources */,
+				2AFC0BCF202B13930007FA81 /* launch.png in Resources */,
 				2A628AD01E8FAAB800A49D12 /* 服务监督@2x.png in Resources */,
 				2D261E3E1D5C427C00C01FE1 /* main_tab00@2x.png in Resources */,
 				2A628AAB1E8E950600A49D12 /* bg_property.png in Resources */,
@@ -3215,7 +3212,6 @@
 				2D42E5711D6E8F08005361D7 /* service物业.png in Resources */,
 				2DADFD781D702DFF00B3B7D7 /* shop1.jpg in Resources */,
 				2A628A9E1E8E926700A49D12 /* 缴费-彩.png in Resources */,
-				C7DA520C1FC90DF300DF402D /* startPicture.png in Resources */,
 				2A628A901E8E926700A49D12 /* 丁丁停车-彩.png in Resources */,
 				2D88DCDD1E6FD99000610250 /* DASLidaerLightController.storyboard in Resources */,
 				2D54FF661D6B23DA00A7BA2F /* home_left@3x.png in Resources */,
