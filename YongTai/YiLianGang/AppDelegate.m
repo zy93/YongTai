@@ -123,18 +123,6 @@
     self.window.rootViewController = loginNewVC;
 }
 
--(void)addCoverViewAnimation{
-    self.coverView = [[NSBundle mainBundle]loadNibNamed:@"WelcomeView" owner:nil options:nil].lastObject;
-    self.coverView.frame = [UIScreen mainScreen].bounds;
-    [self.window addSubview:self.coverView];
-    [UIView animateWithDuration:1.5 animations:^{
-        self.coverView.alpha = 0;
-    }completion:^(BOOL finished) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.coverView removeFromSuperview];
-        });
-    }];
-}
 /**设置tabBar*/
 -(void)goToTabBar{
 //    UIViewController *vc = [[TabBarSetTool sharedTabBarSetTool]getTabBarController];
