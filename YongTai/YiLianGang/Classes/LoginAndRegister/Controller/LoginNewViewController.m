@@ -34,9 +34,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor colorWithRed:242.0f/255.f green:242.0f/255.f blue:242.0f/255.f alpha:1];
-    self.logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_ylg"]];
-    self.logoImageView.image = [self.logoImageView.image imageChangeColor:[UIColor colorWithRed:35.0f/255.0f green:124.0f/255.0f blue:223.0f/255.0f alpha:1]];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yt_icon"]];
+//    self.logoImageView.image = [self.logoImageView.image imageChangeColor:[UIColor colorWithRed:35.0f/255.0f green:124.0f/255.0f blue:223.0f/255.0f alpha:1]];
     self.logoImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:self.logoImageView];
     
@@ -104,7 +104,7 @@
         make.top.equalTo(self.view.mas_top).with.offset(100);
         make.left.equalTo(self.view.mas_left).with.offset(30);
         make.right.equalTo(self.view.mas_right).with.offset(-30);
-        make.height.mas_equalTo(50);
+//        make.height.mas_equalTo(50);
     }];
     
     [self.userTelView mas_makeConstraints:^(MASConstraintMaker *make) {
