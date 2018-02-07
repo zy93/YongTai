@@ -23,9 +23,8 @@
 #import <UserNotifications/UserNotifications.h>
 #endif
 
-@interface AppDelegate ()<LoginNewToolDelegate, JPUSHRegisterDelegate>
+@interface AppDelegate ()<JPUSHRegisterDelegate>
 @property(nonatomic,strong) UIView *coverView;
-@property(nonatomic,strong) WelcomeController *welcomeController;
 @end
 
 @implementation AppDelegate
@@ -105,7 +104,6 @@
 #pragma mark - 外包代码
 
 -(void)comfirmIfHasLoginSaved{
-    [self goToWelcomeController];
     NSLog(@"本地存储的用户信息：%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"]);
     if ([[NSUserDefaults standardUserDefaults] stringForKey:@"mobile"].length>0) {
         [LoginNewTool sharedLoginNewTool].userID = [[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"] objectForKey:@"mobile"] ;
@@ -119,79 +117,12 @@
 }
 
 -(void)goToLoginView{
-//    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userName"];
-//    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userPwd"];
-//    UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"LoginTableStoryboard" bundle:nil];
-//    //    UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    //    window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[loginStoryboard instantiateInitialViewController]];
-//    //    [self.window.rootViewController presentViewController:[[UINavigationController alloc]initWithRootViewController:[loginStoryboard instantiateInitialViewController]] animated:NO completion:nil];
-//    //    self.window = window;
-//    //    [self.window makeKeyAndVisible];
-//    UIViewController *vc = [[UINavigationController alloc]initWithRootViewController:[loginStoryboard instantiateInitialViewController]];
-//
-//    [UIView transitionFromView:self.window.rootViewController.view
-//                        toView:vc.view
-//                      duration:0.5
-//                       options:UIViewAnimationOptionTransitionCrossDissolve
-//                    completion:^(BOOL finished)
-//     {
-//         self.window.rootViewController = vc;
-//         self.welcomeController = nil;
-//     }];
-    //    [self addCoverViewAnimation];
-    
     //先清除之前缓存
-    
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userInfo"];
     LoginNewViewController *loginNewVC = [[LoginNewViewController alloc] init];
-    //[self.navigationController pushViewController:loginNewVC animated:YES];
-    
-    [UIView transitionFromView:self.window.rootViewController.view
-                            toView:loginNewVC.view
-                          duration:0.5
-                           options:UIViewAnimationOptionTransitionCrossDissolve
-                        completion:^(BOOL finished)
-         {
-             self.window.rootViewController = loginNewVC;
-             self.welcomeController = nil;
-         }];
+    self.window.rootViewController = loginNewVC;
 }
 
-//-(void)loginToolDidLogin:(BOOL)isSuccess withDict:(NSDictionary*)dict{
-//    if (isSuccess) {
-//        if([[dict[@"error_code"]stringValue] isEqualToString:@"0"]){
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//
-//                [[LoginTool sharedLoginTool]setUserIDWithOriginDict:dict];
-//
-//
-//                [self loginDidSeccess];
-//            });
-//        }else{
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self goToLoginView];
-//            });
-//        }
-//    }else{
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self goToLoginView];
-//        });
-//    }
-//}
-//-(void)loginDidSeccess{
-//    //TODO: 登录成功
-//    [self goToTabBar];
-//}
-/**设置WelcomeController*/
--(void)goToWelcomeController{
-    self.welcomeController = [WelcomeController new];
-    UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    window.rootViewController = _welcomeController;
-    
-    self.window = window;
-    [self.window makeKeyAndVisible];
-    
-}
 -(void)addCoverViewAnimation{
     self.coverView = [[NSBundle mainBundle]loadNibNamed:@"WelcomeView" owner:nil options:nil].lastObject;
     self.coverView.frame = [UIScreen mainScreen].bounds;
@@ -201,8 +132,6 @@
     }completion:^(BOOL finished) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.coverView removeFromSuperview];
-            //            [self.welcomeController dismissViewControllerAnimated:NO completion:nil];
-            self.welcomeController = nil;
         });
     }];
 }
@@ -212,7 +141,6 @@
     
     WOTBaseNavigationController *nav = [[WOTBaseNavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"HomePageController" bundle:nil] instantiateViewControllerWithIdentifier:@"HomePageController"]];
     self.window.rootViewController = nav;
-    self.welcomeController = nil;
     
 }
 
